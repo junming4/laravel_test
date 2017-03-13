@@ -10,7 +10,8 @@
         "jenssegers/agent": "^2.4",
         "laravel/socialite": "2.0",
         "robclancy/presenter": "^1.3",
-        "prettus/l5-repository": "^2.6"
+        "prettus/l5-repository": "^2.6",
+        "latrell/swagger": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
