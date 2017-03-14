@@ -37,3 +37,10 @@ $factory->define(App\Models\Article::class, function (Faker\Generator $faker) {
         'content' => $faker->name
     ];
 });
+
+
+$factory->define(\App\Models\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+    ];
+});

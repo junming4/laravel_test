@@ -5,23 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Type
+ * Class Tag
  * @package App\Models
  */
-class Type extends Model
+class Tag extends Model
 {
     //
     /**
      * @var string
      */
-    protected $table = 'types';
+    protected $table = 'tags';
 
     /**
-     *   多找回1的数据
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function articles()
     {
-        return $this->belongsTo('App\Models\Article');
+        return $this->belongsToMany('App\Models\Tag');
     }
 
 }
