@@ -25,7 +25,8 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Models\Type::class, function (Faker\Generator $faker) {
     return [
-        'type_name' => $faker->name
+        'type_name' => $faker->name,
+        'is_show' => rand(0, 1)
     ];
 });
 
@@ -33,6 +34,7 @@ $factory->define(App\Models\Article::class, function (Faker\Generator $faker) {
     return [
         'type_id' => 1,
         'title' => $faker->name,
+        'img_url' => $faker->imageUrl(710,284),
         'description' => $faker->name,
         'content' => $faker->name
     ];

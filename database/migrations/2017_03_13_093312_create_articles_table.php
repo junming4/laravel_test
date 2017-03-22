@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->integer('type_id')->unsigned()->index();
             $table->string('title');
+            $table->string('img_url');
             $table->string('description');
             $table->text('content');
             $table->foreign('type_id')

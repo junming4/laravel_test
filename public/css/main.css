@@ -1,0 +1,238 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+
+
+/* Etiquetas Sandra*/
+
+
+body {
+	font-family: 'Roboto' !important, sans-serif;
+	background: #f5f5f5;
+}
+
+#tituloblog {
+  padding-top: 80px;
+  color: white;
+  font-weight: 300;
+}
+
+
+section {
+	padding: 50px 0;
+	margin: 0;
+}
+
+#tituloblog h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.navbar-inverse  {
+  background-color: #2c3e50 !important;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #2C3450 !important ;
+}
+
+.white {
+  color: #fff;
+}
+
+.bggreen {
+  background-color: #2ecc71;
+}
+
+ul.boton1 {
+  margin: 20px 0 0;
+  background: transparent;
+  list-style: none;
+}
+ul.boton1 > li {
+  text-shadow: none;
+}
+ul.boton1 > li > a,
+ul.boton1 > li .divider {
+  color: #fff;
+}
+ul.boton1 > li.active {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.blog {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.blog {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+
+.blog h3 {
+  margin-top: 0;
+}
+
+.blog .smallicon > span {
+  display: inline-block;
+  color: #999;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.blog .smallicon > span a {
+  color: #999;
+}
+
+.mgb30 {
+  margin-bottom: 30px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ li {
+	margin-right: 5px;
+}
+
+.flecha :before{content:"\f105";}
+}
+
+ul .cloud  {
+	list-style: none;
+}
+
+.cloud li {
+	display: inline-block;
+	margin-bottom: 2%;
+}
+
+/* Facebook */
+
+.fbimg {
+	width: 100%;
+	border-radius: 8px 8px 0 0;
+}
+
+.pdt10 {
+	padding: 5%;
+}
+
+.pdt3 {
+	padding: 3%;
+}
+
+.blogblue {
+	color: #34495e; 
+}
+
+a:hover,
+a:focus {
+  color: #d9534f;
+  text-decoration: none;
+  outline: none;
+}
+
+.br0 {
+	border: 0;
+}
+
+.pdtl {
+	padding-left: 10%;
+}
+
+.textarea {
+	height: 60px;
+}
+
+
+/* Terminan clases Sandra */
+
+
+#footer{
+	 padding-top: 30px;
+  padding-bottom: 30px;
+  color: #bdc3c7;
+}
+.backfoot{
+	background-color: #2c3e50; 
+}
+#footer ul > li{
+	display: inline-block !important;
+	margin-left: 15px;
+}
+#services h2{
+	text-align: center;
+}
+#services p{
+	text-align: center;
+}
+.backicon{
+	font-size: 36px;
+    height: 2em;
+    width: 2em;
+    color: white;
+    margin-right: 10px;
+    padding-top: 20%;
+    background-color: #A4A4A4;
+    padding-left: 25%;
+    display: block;
+    border-radius: 100%;
+}
+#iconos p{
+	text-align: initial;
+}
+#iconos{
+	margin-top: 5%;
+}
+#cli_say  p{
+	font-size: 1.2em !important;
+}
+#block{
+	border-left: none;
+}
+#clients_say h2{
+	margin-top: 3%;
+}
+#clients_say p{
+	margin-top: 3%;
+}
+blockquote{
+	margin-top: 5%;
+}
+.list_company{
+	list-style-type: circle !important;
+}
+
+.back_company{
+	background-color: #34495a;
+	color: white;
+}
+ul.list_company li a{
+	content: "\f105";
+	text-decoration: none;
+	color: white !important;
+}
+
