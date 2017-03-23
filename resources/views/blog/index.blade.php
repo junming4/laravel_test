@@ -21,71 +21,55 @@
             {{--标签部分--}}
             @include('blog.partials._tags')
 
-
         </aside>
 
         <section>
             <div class="col-sm-8 col-sm-pull-4">
-                <div class="blog">
-                    <div>
-                        <img class="img-responsive fbimg" src="images/blog/blog1.jpg">
-                        <div class="pdt10 ">
-                            <a class="blogblue" href="blog-item.html"><h3>Duis sed odio sit amet nibh vulputate cursus</h3></a>
-                            <div class=" mbg30 smallicon">
-                                <span><i class="icon-user"></i> <a href="#">John</a></span>
-                                <span><i class="icon-folder-close"></i> <a href="#">Bootstrap</a></span>
-                                <span><i class="icon-calendar"></i> <a href="#"> Sept 16th, 2012 </a></span>
-                                <span><i class="icon-comment"></i> <a href="blog-item.html#comments">3 Comments</a></span>
+
+                @forelse($lists as $item)
+                    <div class="blog">
+                        <div>
+                            @if($item->img_url)
+                                <img class="img-responsive fbimg" src="{{ $item->img_url }}">
+                            @endif
+                            <div class="pdt10 ">
+                                <a class="blogblue" href="{{ route('blog.show',['id'=>$item->id]) }}">
+                                    <h3>{{ $item->title }}</h3></a>
+                                <div class=" mbg30 smallicon">
+                                    <span><i class="icon-user"></i> <a href="#">John</a></span>
+                                    <span><i class="icon-folder-close"></i> <a href="#">Bootstrap</a></span>
+                                    <span><i class="icon-calendar"></i> <a href="#"> Sept 16th, 2012 </a></span>
+                                    <span><i class="icon-comment"></i> <a href="blog-item.html#comments">3 Comments</a></span>
+                                </div>
+                                <p>{{ $item->description }}</p>
+                                <ul class="cloud">
+                                    <li>
+                                        <a class="btn btn-xs btn-primary pdt10"
+                                           href="{{ route('blog.show',['id'=>$item->id]) }}">Read More<span
+                                                    class="flecha"></span>></a>
+                                    </li>
+                                </ul>
                             </div>
-                            <p> Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <ul class="cloud">
-                                <li><a class="btn btn-xs btn-primary pdt10" href="blog-item.html">Read More <span class="flecha"></span> > </a></li>
-                            </ul>
+
+
+                            <div class="tags">
+                                <i class="icon-tags"></i>标签
+                                @forelse($item->tags as $tag)
+                                <a class="btn btn-xs btn-primary" href="#">{{ $tag->name }}</a>
+                                    @empty
+                                @endforelse
+                            </div>
                         </div>
                     </div>
-                </div>
+                @empty
+                    暂无数据
+                @endforelse
 
-                <div class="blog">
-                    <div>
-                        <img class="img-responsive fbimg" src="images/blog/blog2.jpg">
-                        <div class="pdt10 ">
-                            <a class="blogblue" href="blog-item.html"><h3>Conubia nostra per inceptos himenaeos</h3></a>
-                            <div class=" mbg30 smallicon">
-                                <span><i class="icon-user"></i> <a href="#">John</a></span>
-                                <span><i class="icon-folder-close"></i> <a href="#">Bootstrap</a></span>
-                                <span><i class="icon-calendar"></i> <a href="#"> Sept 16th, 2012 </a></span>
-                                <span><i class="icon-comment"></i> <a href="blog-item.html#comments">0 Comments</a></span>
-                            </div>
-                            <p> Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <ul class="cloud">
-                                <li><a class="btn btn-xs btn-primary pdt10" href="blog-item.html">Read More <span class="flecha"></span> > </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <ul class="pagination pagination-lg">
-                    <li class="previous disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1 <span class="sr-only"></span> </a></li>
-                    <li><a href="blog-item.html">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
+                @if(!empty($lists))
+                    {!! $lists->appends(Request::all())->links() !!}
+                @endif
             </div>
+        </section>
     </div>
 @endsection
 

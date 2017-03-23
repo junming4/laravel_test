@@ -36,7 +36,7 @@ $factory->define(App\Models\Article::class, function (Faker\Generator $faker) {
         'title' => $faker->name,
         'img_url' => $faker->imageUrl(710,284),
         'description' => $faker->name,
-        'content' => $faker->name
+        'content' => $faker->paragraph
     ];
 });
 

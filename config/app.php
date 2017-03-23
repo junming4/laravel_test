@@ -183,7 +183,8 @@ return [
          */
         Robbo\Presenter\PresenterServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
-        Latrell\Swagger\SwaggerServiceProvider::class
+        Latrell\Swagger\SwaggerServiceProvider::class,
+        App\Providers\RepositoriesServiceProvider::class,
 
     ],
 
