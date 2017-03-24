@@ -10,6 +10,7 @@
 return [
     'blog' => [ //博客一些配置
         'pages' => 10,
+        'authName'=> 'LaravelJun'
     ]
 
 ];

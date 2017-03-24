@@ -19,7 +19,7 @@ class Article extends Model implements Transformable
      */
     public function types()
     {
-        return $this->hasMany('App\Models\Type');
+        return $this->hasMany('App\Models\Type','id','type_id');
     }
 
     /**

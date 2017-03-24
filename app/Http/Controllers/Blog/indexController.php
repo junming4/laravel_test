@@ -27,11 +27,15 @@ class indexController extends Controller
         $id = (int)$id;
         if ($id < 1) return redirect(url('/'))->withErrors('非法操作');
 
-        $data = $this->articleRepository->find($id);
+        $article = $this->articleRepository->find($id);
+        if (empty($article)) return redirect(url('/'))->withErrors('数据不存在');
 
-        if (empty($data)) return redirect(url('/'))->withErrors('数据不存在');
+        $article->increment('views');
 
-        return view('blog.show', $data);
+        return view('blog.show', [
+            'article' => $article,
+            'tags' => $article->tags
+        ]);
     }
 
 }

@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-sm-12">
             <ul class="categories">
-                <li class="flecha"><a href="#">Development</a></li>
-                <li class="flecha"><a href="#">Design</a></li>
-                <li class="flecha"><a href="#">Updates</a></li>
-                <li class="flecha"><a href="#">Tutorial</a></li>
-                <li class="flecha"><a href="#">News</a></li>
+                <li class="flecha"><a href="#" class="icon-tags">DevelopmentDevelopmentDevelopment</a></li>
+                <li class="flecha"><a href="#" class="icon-tags">Design</a></li>
+                <li class="flecha"><a href="#" class="icon-tags">Updates</a></li>
+                <li class="flecha"><a href="#" class="icon-tags">Tutorial</a></li>
+                <li class="flecha"><a href="#" class="icon-tags">News</a></li>
             </ul>
         </div>
     </div>

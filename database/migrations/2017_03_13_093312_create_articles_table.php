@@ -20,6 +20,7 @@ class CreateArticlesTable extends Migration
             $table->string('img_url');
             $table->string('description');
             $table->text('content');
+            $table->integer('views');
             $table->foreign('type_id')
                 ->references('id')
                 ->on('types')
