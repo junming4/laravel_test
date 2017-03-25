@@ -185,6 +185,7 @@ return [
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         Latrell\Swagger\SwaggerServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -236,6 +237,8 @@ return [
         /*
          * phper add
          */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

@@ -1,5 +1,5 @@
 @extends('blog.layouts.master')
-@section('title','item')
+@section('title',$article->title)
 
 @section('styles')
 @endsection
@@ -25,15 +25,28 @@
                 <div class="blog">
                     <div>
                         @if($article->img_url)
-                        <img class="img-responsive fbimg" src="{{ $article->img_url }}">
+                            <img class="img-responsive fbimg" src="{{ $article->img_url }}">
                         @endif
                         <div class="pdt10 ">
-                            <a class="blogblue" href="{{ route('blog.show',['id'=>$article->id]) }}"><h3>{{ $article->title }}</h3></a>
+                            <a class="blogblue" href="{{ route('blog.show',['id'=>$article->id]) }}">
+                                <h3>{{ $article->title }}</h3></a>
                             <div class=" mbg30 smallicon">
-                                <span><i class="icon-user"></i> <a href="#">John</a></span>
-                                <span><i class="icon-folder-close"></i> <a href="#">Bootstrap</a></span>
-                                <span><i class="icon-calendar"></i> <a href="#"> Sept 16th, 2012 </a></span>
-                                <span><i class="icon-comment"></i> <a href="blog-item.html#comments">3 Comments</a></span>
+                                <span>
+                                    <i class="icon-user"></i>
+                                    <a href="javascript:void(0);">{{ config('common.blog.authName') }}</a>
+                                </span>
+                                <span>
+                                    <i class="icon-folder-close"></i>
+                                    <a href="{{ route('blog.index',['type_id'=>$article->type_id]) }}">{{ $article->types->pluck('type_name')->last() }}</a>
+                                </span>
+                                <span>
+                                    <i class="icon-calendar"></i>
+                                    <a href="javascript:void(0);">{{ $article->created_at }}</a>
+                                </span>
+                                <span>
+                                    <i class="icon-eye-open"></i>
+                                    <a href="{{ route('blog.show',['id'=>$article->id]) }}">{{ $article->views }}</a>
+                                </span>
                             </div>
                             <br>
 
@@ -42,9 +55,9 @@
                             <hr>
 
                             <div class="tags">
-                                <i class="icon-tags"></i> Tags
+                                <i class="icon-tags"></i> 标签
                                 @forelse($tags as $tag)
-                                    <a class="btn btn-xs btn-primary" href="#">{{ $tag->name }}</a>
+                                    <a class="btn btn-xs btn-primary" href="{{ route('blog.index',['tag_id'=>$tag->id]) }}">{{ $tag->name }}</a>
                                 @empty
                                 @endforelse
                             </div>
@@ -53,7 +66,7 @@
                             <br>
 
                             {{--评论内容--}}
-                           {{-- @include('blog.partials._comment_content')--}}
+                            {{-- @include('blog.partials._comment_content')--}}
 
                         </div>
 

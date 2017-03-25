@@ -26,9 +26,10 @@
 
 Route::group(['namespace' => 'Blog'], function ($route) {
 
-    $route->get('/','indexController@index');
+    $route->get('/',['as'=>'blog.index','uses' => 'indexController@index']);
 
     $route->get('show/{id}',['as'=>'blog.show','uses' => 'indexController@show']);
+
 
 });
 

@@ -38,22 +38,30 @@
                                 <a class="blogblue" href="{{ route('blog.show',['id'=>$item->id]) }}">
                                     <h3>{{ $item->title }}</h3></a>
                                 <div class=" mbg30 smallicon">
-                                    <span><i class="icon-user"></i> <a
-                                                href="javascript:void(0);">{{ config('common.blog.authName') }}</a></span>
-                                    <span><i class="icon-folder-close"></i> <a
-                                                href="#">{{$item->types->pluck('type_name')->last()}}</a></span>
-                                    <span><i class="icon-calendar"></i> <a
-                                                href="javascript:void(0);">{{ $item->created_at }} </a></span>
-                                    <span><i class="icon-eye-open"></i> <a
-                                                href="{{ route('blog.show',['id'=>$item->id]) }}">{{ $item->views }}
-                                            浏览</a></span>
+                                    <span>
+                                        <i class="icon-user"></i>
+                                        <a href="javascript:void(0);">{{ config('common.blog.authName') }}</a>
+                                    </span>
+                                    <span>
+                                        <i class="icon-folder-close"></i>
+                                        <a href="{{ route('blog.index',['type_id'=>$item->type_id]) }}">{{$item->types->pluck('type_name')->last()}}</a>
+                                    </span>
+                                    <span>
+                                        <i class="icon-calendar"></i>
+                                        <a href="javascript:void(0);">{{ $item->created_at }} </a>
+                                    </span>
+                                    <span>
+                                        <i class="icon-eye-open"></i>
+                                        <a href="{{ route('blog.show',['id'=>$item->id]) }}">{{ $item->views }}浏览</a>
+                                    </span>
                                 </div>
                                 <p>{{ $item->description }}</p>
                                 <ul class="cloud">
                                     <li>
                                         <a class="btn btn-xs btn-primary pdt10"
-                                           href="{{ route('blog.show',['id'=>$item->id]) }}">Read More<span
-                                                    class="flecha"></span>></a>
+                                           href="{{ route('blog.show',['id'=>$item->id]) }}">
+                                            Read More<span class="flecha"></span>>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -62,7 +70,8 @@
                             <div class="tags">
                                 <i class="icon-tags"></i>标签
                                 @forelse($item->tags as $tag)
-                                    <a class="btn btn-xs btn-primary" href="#">{{ $tag->name }}</a>
+                                    <a class="btn btn-xs btn-primary"
+                                       href="{{ route('blog.index',['tag_id'=>$tag->id]) }}">{{ $tag->name }}</a>
                                 @empty
                                 @endforelse
                             </div>

@@ -10,7 +10,10 @@
 return [
     'blog' => [ //博客一些配置
         'pages' => 10,
-        'authName'=> 'LaravelJun'
+        'authName'=> 'LaravelJun',
+        'recommendArticlePages' => 8, //文章推荐条数
+        'recommendTagPages' => 12, //推荐标签数量
+        'typeShowNum' => 5, //显示在导航的分类个数
     ]
 
 ];

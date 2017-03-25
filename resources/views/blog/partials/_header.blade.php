@@ -11,9 +11,15 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active">
+                <li @if(Request::is('/') && Request::get('type_id',0) == 0) class="active" @endif >
                     <a href="{{ url('/') }}">Blog</a>
                 </li>
+                @inject('typeObj','App\Services\TypeServices')
+                @forelse($typeObj->lists() as $item)
+                    <li @if(Request::get('type_id',0) == $item->id) class="active" @endif><a href="{{ route('blog.index',['type_id'=>$item->id]) }}">{{ $item->type_name }}</a></li>
+                @empty
+                @endforelse
+
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="blog-item.html">Bolg-item</a></li>
                 <li><a href="contact-us.html">Contact</a></li>
