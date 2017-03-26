@@ -42,6 +42,11 @@ class Article extends Model implements Transformable
         return $query->where('type_id', $type_id);
     }
 
+    /**
+     * @param $query
+     * @param $keywords
+     * @return mixed
+     */
     public function scopeOfKeywords($query, $keywords)
     {
         $keywords = trim($keywords);
