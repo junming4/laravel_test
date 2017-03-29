@@ -30,7 +30,7 @@ Route::group(['namespace' => 'Blog'], function ($route) {
 
     $route->get('show/{id}',['as'=>'blog.show','uses' => 'indexController@show']);
 
-    $route->get('/test','TestController@index');
+    //$route->get('/test','TestController@index');
 
 });
 

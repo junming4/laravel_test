@@ -5,8 +5,7 @@ namespace App\Repositories\Blog;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\Blog\CommentRepository;
-use App\Entities\Blog\Comment;
-use App\Validators\Blog\CommentValidator;
+use App\Models\Comment;
 
 /**
  * Class CommentRepositoryEloquent

@@ -56,7 +56,7 @@
 
                             <div class="tags">
                                 <i class="icon-tags"></i> 标签
-                                @forelse($tags as $tag)
+                                @forelse($article->tags as $tag)
                                     <a class="btn btn-xs btn-primary" href="{{ route('blog.index',['tag_id'=>$tag->id]) }}">{{ $tag->name }}</a>
                                 @empty
                                 @endforelse

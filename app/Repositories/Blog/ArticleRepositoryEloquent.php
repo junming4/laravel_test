@@ -5,8 +5,7 @@ namespace App\Repositories\Blog;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\Blog\ArticleRepository;
-use App\Entities\Blog\Article;
-use App\Validators\Blog\ArticleValidator;
+use App\Models\Article;
 
 /**
  * Class ArticleRepositoryEloquent

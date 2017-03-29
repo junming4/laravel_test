@@ -48,9 +48,9 @@ class indexController extends Controller
         //todo 需要优化
         if ($tag_id > 0) { //大于0 时
             $tags = $this->tagRepository->find($tag_id);
-            $lists = $tags->articles()->ofTypeId($type_id)->ofKeywords($keywords)->paginate(config('common.blog.pages'));
+            $lists = $tags->articles()->with('tags')->ofTypeId($type_id)->ofKeywords($keywords)->paginate(config('common.blog.pages'));
         } else {
-            $lists = $this->articleRepository->scopeQuery(function ($query) use ($type_id, $keywords) {
+            $lists = $this->articleRepository->with('tags')->scopeQuery(function ($query) use ($type_id, $keywords) {
                 $type_id = (int)$type_id;
                 $keywords = trim($keywords);
                 if ($type_id > 0) {
@@ -78,17 +78,19 @@ class indexController extends Controller
         }
 
 
-        $article = $this->articleRepository->find($id);
+        $article = $this->articleRepository->with('tags')->find($id);
 
         if (empty($article)) {
             return redirect(route('blog.index'))->withErrors('数据不存在');
         }
 
+
+
         $article->increment('views');
 
         return view('blog.show', [
             'article' => $article,
-            'tags' => $article->tags
+            //'tags' => $article->tags
         ]);
     }
 }

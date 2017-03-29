@@ -3,24 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 
-/**
- * Class Type
- * @package App\Models
- */
-class Type extends Model
+class Type extends Model implements Transformable
 {
-    //
-    /**
-     * @var string
-     */
-    protected $table = 'types';
+    use TransformableTrait;
 
-    /**
-     *   多找回1的数据
-     */
+    protected $fillable = [];
+
     public function articles()
     {
-        return $this->hasMany('App\Entities\Blog\Article');
+        return $this->hasMany('App\Models\Article');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function comments()
+    {
+        return $this->hasManyThrough('App\Models\Comment', 'App\Models\Article');
     }
 }
