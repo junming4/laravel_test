@@ -22,5 +22,4 @@ class Tag extends Model implements Transformable
     {
         return $this->belongsToMany('App\Entities\Blog\Article');
     }
-
 }

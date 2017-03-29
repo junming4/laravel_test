@@ -23,5 +23,4 @@ class Type extends Model
     {
         return $this->hasMany('App\Entities\Blog\Article');
     }
-
 }

@@ -9,7 +9,6 @@
 
 namespace App\Services;
 
-
 use App\Repositories\Blog\TypeRepository;
 
 /**
@@ -37,9 +36,8 @@ class TypeServices
      */
     public function lists()
     {
-        return $this->typeRepository->scopeQuery(function ($query){
-            return $query->where('is_show',1);
+        return $this->typeRepository->scopeQuery(function ($query) {
+            return $query->where('is_show', 1);
         })->paginate(config('common.blog.typeShowNum'), ['id', 'type_name']);
     }
-
 }

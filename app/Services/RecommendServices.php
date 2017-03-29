@@ -46,6 +46,4 @@ class RecommendServices
     {
         return $this->tagRepository->orderBy('article_num', 'DESC')->paginate(config('common.blog.recommendTagPages'), ['id', 'name']);
     }
-
 }
-

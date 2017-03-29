@@ -24,5 +24,4 @@ class Type extends Model implements Transformable
     {
         return $this->hasManyThrough('App\Entities\Blog\Comment', 'App\Entities\Blog\Article');
     }
-
 }

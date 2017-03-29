@@ -11,8 +11,8 @@ class Article extends Model implements Transformable
     use TransformableTrait;
 
     protected $fillable = [
-		'',
-	];
+        '',
+    ];
 
     /**
      *  一对多,相对关联，由于是单数所以不需要types()
@@ -38,7 +38,9 @@ class Article extends Model implements Transformable
     public function scopeOfTypeId($query, $type_id)
     {
         $type_id = (int)$type_id;
-        if($type_id <1) return $query;
+        if ($type_id <1) {
+            return $query;
+        }
         return $query->where('type_id', $type_id);
     }
 
@@ -50,9 +52,10 @@ class Article extends Model implements Transformable
     public function scopeOfKeywords($query, $keywords)
     {
         $keywords = trim($keywords);
-        if(strlen($keywords) <1) return $query;
+        if (strlen($keywords) <1) {
+            return $query;
+        }
         return $query->orWhere('title', 'like', '%' . $keywords . '%')
             ->orWhere('description', 'like', '%' . $keywords . '%');
     }
-
 }
