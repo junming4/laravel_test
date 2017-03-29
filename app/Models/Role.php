@@ -19,4 +19,12 @@ class Role extends Model implements Transformable
     {
         return $this->belongsToMany('App\Models\User');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function permissions()
+    {
+        return $this->belongsToMany('App\Models\Permission');
+    }
 }

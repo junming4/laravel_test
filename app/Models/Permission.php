@@ -11,4 +11,12 @@ class Permission extends Model implements Transformable
     use TransformableTrait;
 
     protected $fillable = [];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Permission');
+    }
 }
