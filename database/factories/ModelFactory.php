@@ -47,3 +47,10 @@ $factory->define(\App\Models\Tag::class, function (Faker\Generator $faker) {
         'name' => $faker->word,
     ];
 });
+
+$factory->define(\App\Entities\Blog\Comment::class, function (Faker\Generator $faker) {
+    return [
+        'article_id' => $faker->numberBetween(1,10),
+        'comment_text' => $faker->paragraph(3),
+    ];
+});

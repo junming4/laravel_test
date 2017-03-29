@@ -43,7 +43,7 @@ class indexController extends Controller
     {
         $tag_id = (int)$request->get('tag_id', 0);
         $type_id = (int)$request->get('type_id', 0);
-        $keywords = strip_tags($request->get('keywords',''));
+        $keywords = strip_tags($request->get('keywords', ''));
 
         //todo 需要优化
         if ($tag_id > 0) { //大于0 时
@@ -53,7 +53,9 @@ class indexController extends Controller
             $lists = $this->articleRepository->scopeQuery(function ($query) use ($type_id, $keywords) {
                 $type_id = (int)$type_id;
                 $keywords = trim($keywords);
-                if ($type_id > 0) $query = $query->where('type_id', $type_id);
+                if ($type_id > 0) {
+                    $query = $query->where('type_id', $type_id);
+                }
                 if (strlen($keywords) > 0) {
                     $query = $query->orWhere('title', 'like', '%' . $keywords . '%')
                         ->orWhere('description', 'like', '%' . $keywords . '%');
@@ -71,10 +73,16 @@ class indexController extends Controller
     public function show($id)
     {
         $id = (int)$id;
-        if ($id < 1) return redirect(route('blog.index'))->withErrors('非法操作');
+        if ($id < 1) {
+            return redirect(route('blog.index'))->withErrors('非法操作');
+        }
+
 
         $article = $this->articleRepository->find($id);
-        if (empty($article)) return redirect(route('blog.index'))->withErrors('数据不存在');
+
+        if (empty($article)) {
+            return redirect(route('blog.index'))->withErrors('数据不存在');
+        }
 
         $article->increment('views');
 
@@ -83,5 +91,4 @@ class indexController extends Controller
             'tags' => $article->tags
         ]);
     }
-
 }

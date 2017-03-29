@@ -21,7 +21,7 @@ class Article extends Model
      */
     public function types()
     {
-        return $this->hasMany('App\Models\Type','id','type_id');
+        return $this->belongsTo('App\Entities\Blog\Type');
     }
 
     /**

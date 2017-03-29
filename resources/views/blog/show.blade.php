@@ -37,7 +37,7 @@
                                 </span>
                                 <span>
                                     <i class="icon-folder-close"></i>
-                                    <a href="{{ route('blog.index',['type_id'=>$article->type_id]) }}">{{ $article->types->pluck('type_name')->last() }}</a>
+                                    <a href="{{ route('blog.index',['type_id'=>$article->type_id]) }}">{{ $article->type->type_name }}</a>
                                 </span>
                                 <span>
                                     <i class="icon-calendar"></i>

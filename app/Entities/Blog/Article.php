@@ -15,11 +15,11 @@ class Article extends Model implements Transformable
 	];
 
     /**
-     *  一对多
+     *  一对多,相对关联，由于是单数所以不需要types()
      */
-    public function types()
+    public function type()
     {
-        return $this->hasMany('App\Entities\Blog\Type','id','type_id');
+        return $this->belongsTo('App\Entities\Blog\Type');
     }
 
     /**

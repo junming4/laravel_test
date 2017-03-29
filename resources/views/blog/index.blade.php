@@ -43,8 +43,9 @@
                                         <a href="javascript:void(0);">{{ config('common.blog.authName') }}</a>
                                     </span>
                                     <span>
+
                                         <i class="icon-folder-close"></i>
-                                        <a href="{{ route('blog.index',['type_id'=>$item->type_id]) }}">{{$item->types->pluck('type_name')->last()}}</a>
+                                        <a href="{{ route('blog.index',['type_id'=>$item->type_id]) }}">{{$item->type->type_name }}</a>
                                     </span>
                                     <span>
                                         <i class="icon-calendar"></i>

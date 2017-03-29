@@ -12,4 +12,17 @@ class Type extends Model implements Transformable
 
     protected $fillable = [];
 
+    public function articles()
+    {
+        return $this->hasMany('App\Entities\Blog\Article');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function comments()
+    {
+        return $this->hasManyThrough('App\Entities\Blog\Comment', 'App\Entities\Blog\Article');
+    }
+
 }

@@ -30,6 +30,11 @@ Route::group(['namespace' => 'Blog'], function ($route) {
 
     $route->get('show/{id}',['as'=>'blog.show','uses' => 'indexController@show']);
 
+    $route->get('/test','TestController@index');
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
