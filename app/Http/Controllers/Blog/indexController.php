@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Blog;
 
-use App\Repositories\Blog\ArticleRepository;
-use App\Repositories\Blog\TagRepository;
+use App\Repositories\ArticleRepository;
+use App\Repositories\TagRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

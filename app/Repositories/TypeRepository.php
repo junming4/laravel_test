@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Repositories\Blog;
+namespace App\Repositories;
 
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
- * Interface CommentRepository
+ * Interface TypeRepository
  * @package namespace App\Repositories\Blog;
  */
-interface CommentRepository extends RepositoryInterface
+interface TypeRepository extends RepositoryInterface
 {
     //
 }

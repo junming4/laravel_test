@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Repositories\Blog;
+namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\Blog\TypeRepository;
-use App\Models\Type;
+use App\Repositories\PermissionRepository;
+use App\Models\Permission;
+use App\Validators\PermissionValidator;
 
 /**
- * Class TypeRepositoryEloquent
- * @package namespace App\Repositories\Blog;
+ * Class PermissionRepositoryEloquent
+ * @package namespace App\Repositories;
  */
-class TypeRepositoryEloquent extends BaseRepository implements TypeRepository
+class PermissionRepositoryEloquent extends BaseRepository implements PermissionRepository
 {
     /**
      * Specify Model class name
@@ -20,7 +21,7 @@ class TypeRepositoryEloquent extends BaseRepository implements TypeRepository
      */
     public function model()
     {
-        return Type::class;
+        return Permission::class;
     }
 
     

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Repositories\Blog;
+namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\Blog\CommentRepository;
-use App\Models\Comment;
+use App\Repositories\TagRepository;
+use App\Models\Tag;
 
 /**
- * Class CommentRepositoryEloquent
+ * Class TagRepositoryEloquent
  * @package namespace App\Repositories\Blog;
  */
-class CommentRepositoryEloquent extends BaseRepository implements CommentRepository
+class TagRepositoryEloquent extends BaseRepository implements TagRepository
 {
     /**
      * Specify Model class name
@@ -20,10 +20,10 @@ class CommentRepositoryEloquent extends BaseRepository implements CommentReposit
      */
     public function model()
     {
-        return Comment::class;
+        return Tag::class;
     }
 
-    
+
 
     /**
      * Boot up the repository, pushing criteria

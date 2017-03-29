@@ -9,7 +9,7 @@
 
 namespace App\Services;
 
-use App\Repositories\Blog\TypeRepository;
+use App\Repositories\TypeRepository;
 
 /**
  * Class TypeServices

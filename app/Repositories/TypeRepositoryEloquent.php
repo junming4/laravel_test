@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Repositories\Blog;
+namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\Blog\TagRepository;
-use App\Models\Tag;
+use App\Repositories\TypeRepository;
+use App\Models\Type;
 
 /**
- * Class TagRepositoryEloquent
+ * Class TypeRepositoryEloquent
  * @package namespace App\Repositories\Blog;
  */
-class TagRepositoryEloquent extends BaseRepository implements TagRepository
+class TypeRepositoryEloquent extends BaseRepository implements TypeRepository
 {
     /**
      * Specify Model class name
@@ -20,10 +20,10 @@ class TagRepositoryEloquent extends BaseRepository implements TagRepository
      */
     public function model()
     {
-        return Tag::class;
+        return Type::class;
     }
 
-
+    
 
     /**
      * Boot up the repository, pushing criteria

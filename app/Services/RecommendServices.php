@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Repositories\Blog\ArticleRepository;
-use App\Repositories\Blog\TagRepository;
+use App\Repositories\ArticleRepository;
+use App\Repositories\TagRepository;
 
 /**
  * 推荐服务

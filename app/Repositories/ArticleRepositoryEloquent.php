@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repositories\Blog;
+namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\Blog\ArticleRepository;
+use App\Repositories\ArticleRepository;
 use App\Models\Article;
 
 /**
